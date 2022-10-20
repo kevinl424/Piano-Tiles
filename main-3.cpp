@@ -99,8 +99,8 @@ public:
 	char block;
 	
 	blue(int status, char block) {
-		this -> y = 0; //0
-		this -> x = 36; //8
+		this -> y = 0; 
+		this -> x = 36; 
 		this -> status = status;
 		this -> block = block; //n for note, s for solid
 	}
@@ -112,7 +112,6 @@ public:
 	void display(void) {
 		if (block == 'n') {
 			ST7735_DrawBitmap(x, y, bluenote, 24, 24);
-			//ST7735_DrawBitmap(x, y, bluenote, 12, 18);
 		}
 		else if (block == 's') {
 			ST7735_DrawBitmap(x, y, bluesquare, 24, 24);
@@ -120,9 +119,7 @@ public:
 	}
 	
 	void erase(void) {
-		//ST7735_DrawBitmap(x, y, blackall, 24, 24);
 		ST7735_FillRect(x, y - 23, 24, 24, 0);
-		//ST7735_FillRect(x, y - 30, 24, 31, 0);
 	}
 	
 	void reset(void) {
